@@ -1,0 +1,42 @@
+<!--
+EGO-OSUALA OBIANUJU
+13CK015461
+ICE
+MOVSW INSTRUCTION: It is an A5 code instruction. Move word at address DS:(E)SI to address ES:(E)DI.
+-->
+ <!DOCTYPE html>
+<html>
+    <body>
+    <input type="text" id="mov">
+    <button id="answer" onclick = "theresult();">GO</button>
+
+<p>
+    Binary: <i id = "bin"></i>
+</p>
+
+<p>
+    Hexadecimal: <i id = "hex"></i>
+</p>
+<p id = "error"></p>
+
+<script>
+ function theresult(){
+     
+	movsw = document.getElementById("mov").value; 
+		 if(movsw == "MOVSW" || movsw == "movsw"){
+            bina = "10100101";
+            hexa = parseInt(bina,2).toString(16);
+             
+	     document.getElementById("bin").innerHTML = bina;
+         document.getElementById("hex").innerHTML = hexa;
+         document.getElementById("error").innerHTML = " ";
+		 }
+		 else if(movsw != "MOVSW" || movsw != "movsw"){
+		 document.getElementById("bin").innerHTML = " ";
+         document.getElementById("hex").innerHTML = " ";
+         document.getElementById("error").innerHTML = "Invalid Code";
+         }
+ }
+</script>      
+    </body>
+</html>
